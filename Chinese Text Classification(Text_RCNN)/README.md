@@ -78,5 +78,5 @@
 ## Result
 
 <div align=center>
-    <img src="./others/Result.png" width="500px">
+    <img src="./result/Result.png" width="500px">
 </div>

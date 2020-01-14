@@ -3,12 +3,12 @@
 import torch
 
 # 1) 初始化
-torch.distributed.init_process_group(backend="nccl")
+torch.distributed.init_process_group(backend='nccl')
 
 # 2） 配置每个进程的 GPU
 local_rank = torch.distributed.get_rank()
 torch.cuda.set_device(local_rank)
-device = torch.device("cuda", local_rank)
+device = torch.device('cuda', local_rank)
 
 # 3）使用 DistributedSampler
 train_dataset = ...

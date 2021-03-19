@@ -29,6 +29,7 @@ YOUDAO_URL = "https://openapi.youdao.com/api"
 APP_KEY = "54403535666c5a49"
 APP_SECRET = "vR4U7WbVHyVJ9MH9INYLsmbHFpoktHUJ"
 
+
 class Translator():
     def __init__(self, youdao_url, app_key, app_secret):
         self.youdao_url = youdao_url
@@ -67,6 +68,8 @@ class Translator():
 
         response = self.do_request(data)
         return json.loads(response.content.decode("utf-8"))["translation"][0]
+
+    
 class App_UI(tk.Frame):
     # 实现界面生成功能, 具体事件处理代码在子类APP中。
     def __init__(self, master=None):
@@ -236,6 +239,8 @@ class App_UI(tk.Frame):
         self.text_no_r.insert(1.0, self.no_r_num)
         self.text_yes_r.delete(1.0, tk.END)
         self.text_yes_r.insert(1.0, self.yes_r_num)
+
+
 class App(App_UI):
     # 实现具体的事件处理回调函数,界面生成代码在App_UI中
     def __init__(self, master=None):
@@ -454,7 +459,8 @@ class App(App_UI):
             else:
                 t = threading.Thread(target=self.run_translate)
                 t.start()
-  
+
+
 if __name__ == "__main__":
     # 实例化父窗口
     top = tk.Tk()
